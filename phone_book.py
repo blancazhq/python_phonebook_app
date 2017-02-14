@@ -17,15 +17,21 @@ def look_up():
 
     global phonebook_dict
 
+    counter = 0
+
     while True:
 
         print "\n"
 
         name = raw_input("Name: ")
 
+        counter += 1
+
         if phonebook_dict.get(name) == None:
             print "Name does not exist."
             continue
+        elif counter > 3:
+            break
         else:
             break
 
@@ -58,15 +64,21 @@ def delete_entry():
 
     global phonebook_dict
 
+    counter = 0
+
     while True:
 
         print "\n"
 
         name = raw_input("Name: ")
 
+        counter += 1
+
         if phonebook_dict.get(name) == None:
             print "Name does not exist."
             continue
+        elif counter > 3:
+            break
         else:
             break
 
