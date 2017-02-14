@@ -1,5 +1,6 @@
 import pickle
 
+
 def print_menu():
     print "\n"
     print "Electronic Phone Book"
