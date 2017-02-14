@@ -29,13 +29,15 @@ def look_up():
 
         if phonebook_dict.get(name) == None:
             print "Name does not exist."
+            if counter > 2:
+                print "Too many trials."
+                break
             continue
-        elif counter > 3:
-            break
         else:
             break
 
-    print "Found entry for %s: %s, %s, %s" % (name, phonebook_dict[name]["phone_number"], phonebook_dict[name]["email"], phonebook_dict[name]["website_url"])
+    if counter <=2:
+        print "Found entry for %s: %s, %s, %s" % (name, phonebook_dict[name]["phone_number"], phonebook_dict[name]["email"], phonebook_dict[name]["website_url"])
 
 
 def set_entry():
@@ -76,15 +78,16 @@ def delete_entry():
 
         if phonebook_dict.get(name) == None:
             print "Name does not exist."
+            if counter > 2:
+                print "Too many trials."
+                break
             continue
-        elif counter > 3:
-            break
         else:
             break
 
-    del phonebook_dict[name]
-
-    print "Deleted entry for %s." % name
+    if counter <=2:
+        del phonebook_dict[name]
+        print "Deleted entry for %s." % name
 
 
 def list_all_entry():
@@ -97,7 +100,7 @@ def list_all_entry():
 
 def save_database():
 
-    myfile = open("phonebook.pickle", "a")
+    myfile = open("phonebook.pickle", "w")
 
     pickle.dump(phonebook_dict, myfile)
 
